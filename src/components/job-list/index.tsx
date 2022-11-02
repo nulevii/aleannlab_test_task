@@ -4,7 +4,7 @@ import JobElement from './job-element'
 
 function JobList ({ jobs }: { jobs: DataInterface[] }) {
   return (
-    <section>
+    <section className='bg-customBlue-200'>
       {jobs.map((job) => {
         return <JobElement key={job.id} jobObj={job}></JobElement>
       })}
