@@ -1,4 +1,4 @@
-import { DataInterface } from '../../../utilities/useFetch'
+import { DataInterface } from '../../../utilities/dataInterface'
 function Contacts ({
   address,
   phone,

@@ -10,7 +10,6 @@ import DetailedJob from './components/detailed-job'
 
 function App () {
   const { loading, data: jobs } = useFetch(API_LINK)
-
   if (loading) {
     return <Loader/>
   }

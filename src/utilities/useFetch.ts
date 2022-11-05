@@ -1,5 +1,9 @@
 import { useState, useEffect, useCallback } from 'react'
 
+import { DataInterface } from './dataInterface'
+import { localCopy } from './localeCopy'
+import { generateStars } from './starsGenerator'
+
 export const useFetch = (url: string): { loading: boolean, data: DataInterface[] } => {
   const [loading, setLoading] = useState(true)
   const [data, setProducts] = useState<DataInterface[]>([])
@@ -9,10 +13,14 @@ export const useFetch = (url: string): { loading: boolean, data: DataInterface[]
       const response = await fetch(url)
       const data = (await response.json())
       if (!Array.isArray(data)) throw Error(data?.error || 'unknown error')
-      setProducts(data)
+      const dataWithRating = data.map((element) => ({ ...element, rating: generateStars(5) }))
+      setProducts(dataWithRating)
       setLoading(false)
     } catch (error) {
       setLoading(false)
+      setProducts(
+        localCopy.map((element) => ({ ...element, rating: generateStars(5) }))
+      )
     }
   }, [url])
 
@@ -24,25 +32,4 @@ export const useFetch = (url: string): { loading: boolean, data: DataInterface[]
       })
   }, [url, getProducts])
   return { loading, data }
-}
-export interface DataInterface {
-  id: string
-  name: string
-  email: string
-  phone: string
-  title: string
-  salary: string
-  address: string
-  benefits: string[]
-  location: Location
-  pictures: string[]
-  createdAt: Date
-  updatedAt: Date
-  description: string
-  employment_type: string[]
-}
-
-interface Location {
-  lat: number
-  long: number
 }

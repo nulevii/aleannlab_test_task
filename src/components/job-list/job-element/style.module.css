@@ -1,0 +1,35 @@
+.card{
+@apply max-w-1400 flex m-auto bg-customBlue-100 rounded-lg shadow-md p-4 pb-6 md:bg-white  md:pt-6 
+}
+
+.cardImage {
+ @apply w-16 h-16 mr-5 mt-8 rounded-full flex-shrink-0 md:mt-0 md:w-20 md:mr-6 md:h-20
+}
+
+.generalInfo {
+  @apply md:flex w-full
+}
+
+.ratingAndPostDate {
+  @apply flex items-center max-w-full mb-3 md:order-last md:ml-auto
+}
+
+.stars {
+  @apply w-14 flex mr-auto md:mr-8 md:w-20
+}
+
+.star {
+  @apply shrink-0 w-3 h-3 fill-customBlue-900 md:w-4 md:h-4
+}
+
+.bookmarkAndPostDate {
+  @apply flex md:flex-col md:h-full md:justify-between md:items-end
+}
+
+.bookmark {
+  @apply hidden shrink-0 w-4 h-5 mr-2 md:block
+}
+
+.createdDate {
+  @apply whitespace-nowrap ml-auto block font-light text-sm leading-4 tracking-wider text-customGray-200 md:font-normal md:text-base md:leading-6
+}
