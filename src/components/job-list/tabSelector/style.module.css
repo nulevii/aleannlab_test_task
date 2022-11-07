@@ -1,0 +1,35 @@
+.tabSelectorWrapper{
+  @apply flex items-center justify-center h-[52px] mt-[49px] mb-[64px] w-auto mx-auto rounded-[10.4px] shadow-md bg-customGray-150
+}
+
+
+
+.leftButton{
+  @apply pr-[17px] pl-[23px] h-8 border-r border-customGray-100 fill-customGray-300 hover:fill-customBlue-700
+}
+
+.rightButton{
+    @apply pr-[23px] pl-[17px] h-8 border-l border-customGray-100 fill-customGray-300 hover:fill-customBlue-700
+}
+
+.arrowLeft{
+  @apply inline-block w-[14px] h-[18px]
+}
+
+.arrowRight{
+  @apply inline-block w-[14px] h-[18px]
+}
+
+.numberButtonWrapper{
+  @apply px-[55px] flex
+}
+
+.numberButton{
+  @apply w-[24px] h-[52px] border-b-[2.5px] font-bold text-xl leading-6 text-customGray-500 hover:text-customBlue-700
+  md:w-[31px]
+}
+
+.active{
+  @apply text-customBlue-700 border-customBlue-700
+}
+

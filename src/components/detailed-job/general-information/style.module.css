@@ -1,9 +1,9 @@
 .blockWrapper{
- @apply flex flex-wrap
+ @apply flex flex-wrap items-center
 }
 
 .jobDetailsSection{
-  @apply pb-[135px]
+  @apply pb-[135px] md:pb-[86px]
 }
 
 .sectionHeading{
@@ -11,7 +11,7 @@
 }
 
 .sectionLine{
-  @apply w-full mb-6 h-px border-none bg-customBlue-800 
+  @apply w-full mb-6 h-px border-none bg-customBlue-800 md:mb-10
 }
 
 .helperLink{
@@ -19,35 +19,45 @@
 }
 
 .saveLink{
-  @apply mr-9 md:ml-auto
+  @apply mr-9 md:ml-auto md:mr-[31px]
 }
 
 .starIcon{
-  @apply w-[20px] h-[20px] mr-3 fill-transparent stroke-customBlue-800 stroke-[3px] 
+  @apply w-[20px] h-[20px] mr-3 fill-transparent stroke-customBlue-800 stroke-[3px] md:w-4 
 }
 
 .shareIcon{
-  @apply w-[20px] h-[20px] mr-3 fill-customBlue-800
+  @apply w-[18px] h-[20px] mr-3 fill-customBlue-800
 }
 
 .applyButton{
   @apply rounded-lg w-[127px] h-[52px] not-italic font-semibold text-xs leading-4 text-center  bg-customBlue-800 text-white 
+
+}
+
+.generalDesription{
+  @apply md:pt-8
 }
 
 .description{
   @apply w-full mb-[5px] font-bold text-2xl leading-7 tracking-[-0.75px]
+  order-first lg:max-w-[70%]
 }
 
 .createdDate{
   @apply font-light text-xs leading-6 tracking-[0.2px] text-customBlue-transperent-60 self-center
+  md:font-normal md:text-lg  lg:w-full
+
 }
 
 .salary{
   @apply flex flex-col ml-auto mb-[14px] text-right tracking-[-0.56px] font-medium text-lg leading-6 text-customBlue-transperent-80 
+   lg:mb-auto lg:order-first lg:text-left 
 }
 
 .salary strong {
-  @apply  mt-1 font-bold text-xl leading-6 tracking-[-0.65px] text-customBlue-800
+  @apply mt-1 font-bold text-xl leading-6 tracking-[-0.65px] text-customBlue-800
+  lg:order-first
 }
 
 .textBlock {
@@ -62,8 +72,13 @@
   @apply font-normal text-lg leading-6 tracking-[-0.56px] text-customBlue-transperent-80 
 }
 
+.benifit{
+  @apply relative
+}
+
 .benifit::before{
   @apply align-middle mb-1 mr-4 content-[''] inline-block w-[9px] h-[9px] leading-6 bg-customBlue-transperent-60
+  md:absolute left-[-20px] top-[8px]
 }
 
 .applyButtonMobile{

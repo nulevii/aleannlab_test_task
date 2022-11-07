@@ -12,7 +12,7 @@ function TextInfo ({
   return (
     <div>
       <h3 className={styles.description}>
-        <Link preventScrollReset={true} to={`/job/${id}`}>
+        <Link to={`/job/${id}`}>
           {title}
         </Link>
       </h3>

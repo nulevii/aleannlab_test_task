@@ -61,13 +61,13 @@ function GeneralInformation ({
 
       <ApplyButton styles={`mobileHidden ${styles.applyButton}`}></ApplyButton>
 
-      <div className={styles.blockWrapper}>
+      <div className={`${styles.blockWrapper} ${styles.generalDesription}`}>
         <p className={styles.description}>{title}</p>
         <time dateTime={dateTime} className={styles.createdDate}>
           Posted {createdTime}
         </time>
         <p className={styles.salary}>
-          Brutto, per year
+          <span>Brutto, per year </span>
           <strong>{convertedSalary}</strong>
         </p>
       </div>

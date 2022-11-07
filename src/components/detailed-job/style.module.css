@@ -1,3 +1,20 @@
 .jobDetailsMain{
-  @apply max-w-[1306px] px-4 pt-6 pb-9 font-bold text-3xl leading-8 tracking-[-0.75px] text-customBlue-800 md:px-6 md:pt-14 md:pb-[89px]
+  @apply min-w-[320px] mx-auto max-w-[1440px] px-4 pt-6 pb-9 font-bold text-3xl leading-8 tracking-[-0.75px] text-customBlue-800 
+  md:px-6 md:pt-14 md:pb-[89px] md:flex 
+}
+
+.sectionsWrapper{
+  @apply flex flex-col mr-6 max-w-[855px] lg:mr-[134px]
+}
+
+.jobDetailsFooter{
+  @apply mb-[162px] mx-auto px-6 max-w-[1620px]
+}
+
+.returnButton{
+  @apply flex  items-center justify-center py-4 px-[23px] rounded-lg font-semibold text-xs leading-4 text-center uppercase bg-customGray-50
+}
+
+.arrowIcon{
+  @apply inline-block w-[10px] h-[18px] mr-5 fill-customBlue-900
 }

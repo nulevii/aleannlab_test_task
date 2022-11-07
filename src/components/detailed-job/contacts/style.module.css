@@ -2,21 +2,32 @@
  @apply flex flex-wrap
 } */
 
-.benifitsSection{
-  @apply max-w-[100vw] 
+.contactsSection{
+  @apply  max-w-[100vw]  flex-grow
 }
 
 .sectionHeading{
-  @apply pb-[10px] md:w-auto
+  @apply pb-[10px] md:w-auto md:hidden
 }
 
 .sectionLine{
-  @apply w-full mb-[21px] h-px border-none bg-customBlue-800 
+  @apply w-full mb-[21px] h-px border-none bg-customBlue-800  md:hidden
 }
 
-.addresWrapper{
-  @apply  pt-[31px] rounded-t-lg bg-customBlue-950 text-customGray-50
+@media screen and (min-width:768px) {
+  .addresWrapper{
+  background: radial-gradient(ellipse at center,  #202336 0%,#202336 50%,#202336  50%,#fff00000 50%,#fff00000) ;
+  background-size: 400px 400px ;
+  background-position: -200px -100px;
+  background-repeat: no-repeat;
 }
+}
+.addresWrapper{
+  @apply min-w-[280px]  max-w-[402px] pt-[31px] rounded-lg bg-customBlue-950 text-customGray-50
+   md:min-w-[300px] 
+}
+
+
 
 .address{
   @apply  pb-9 pl-[62px] not-italic
@@ -41,9 +52,6 @@
   @apply block font-normal text-base leading-6 text-customGray-150
 }
 
-.mapWrapper{
-   @apply rounded-b-lg overflow-hidden h-[200px]
-}
 .map{
   @apply  grayscale invert 
 }

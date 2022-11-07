@@ -14,9 +14,7 @@ const LocationMap = ({ styles, location }: {
       boxClassname={styles.map}
       height={200}
       defaultCenter={center}
-      defaultZoom={4}
-    >
-
+      defaultZoom={3} >
       <Overlay anchor={center} offset={[13, 36]}>
         <svg className={styles.mapLocationIcon}>
           <use href={sprite + '#location'}></use>

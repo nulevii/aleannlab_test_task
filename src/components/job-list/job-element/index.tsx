@@ -18,7 +18,7 @@ function JobElement ({ job }: { job: DataInterface }) {
   const dateTime = dayjs(createdAt).format('DD/MM/YYYY')
 
   return (
-    <article className={styles.card}>
+    <li className={styles.card}>
       <img className={styles.cardImage} src={image} alt={title} />
 
       <div className={styles.generalInfo}>
@@ -42,7 +42,7 @@ function JobElement ({ job }: { job: DataInterface }) {
         </div>
         <TextInfo address={address} name={name} id={id} title={title} ></TextInfo>
       </div>
-    </article>
+    </li>
   )
 }
 

@@ -13,7 +13,7 @@ export interface DataInterface {
   updatedAt: Date | string
   description: string
   employment_type: string[]
-  rating: string[]
+  rating: number[]
 }
 
 interface Location {

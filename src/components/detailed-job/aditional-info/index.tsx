@@ -12,15 +12,19 @@ function AditionalInfo ({
       <h2 className={styles.sectionHeading}>Additional info</h2>
       <hr className={styles.sectionLine} />
       <h3 className={styles.AditionalInfoListCaption}>Employment type</h3>
-      <ul className={styles.AditionalInfoList}>
+      <ul className={styles.employmenTypeList}>
         {employmentType.map((type) => (
-          <li className={styles.employmentType} key={type}>{type}</li>
+          <li className={styles.employmentType} key={type}>
+            {type}
+          </li>
         ))}
       </ul>
       <h3 className={styles.AditionalInfoListCaption}>Benefits</h3>
-      <ul className={styles.AditionalInfoList}>
+      <ul className={styles.benifitsList }>
         {benefits.map((benifit) => (
-          <li className={styles.benifit} key={benifit}>{benifit}</li>
+          <li className={styles.benifit} key={benifit}>
+            {benifit}
+          </li>
         ))}
       </ul>
     </section>

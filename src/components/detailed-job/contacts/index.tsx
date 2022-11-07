@@ -38,13 +38,11 @@ function Contacts ({
             {email}
           </a>
         </address>
-      </article>
-      <div className={styles.mapWrapper}>
         <LocationMap
           styles={styles}
           location={{ lat: location.lat, long: location.long }}
         ></LocationMap>
-      </div>
+      </article>
     </section>
   )
 }
