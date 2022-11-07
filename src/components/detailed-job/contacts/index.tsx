@@ -1,4 +1,10 @@
+import LocationMap from './map'
+
 import { DataInterface } from '../../../utilities/dataInterface'
+import { convertPhone } from '../../../utilities/convertPhone'
+import styles from './style.module.css'
+import sprite from '../../../assets/icons.svg'
+
 function Contacts ({
   address,
   phone,
@@ -6,19 +12,38 @@ function Contacts ({
   location,
   name
 }: Pick<DataInterface, 'address' | 'phone' | 'email' | 'location' | 'name'>) {
+  const convertedPhone = convertPhone(phone)
   return (
-    <section>
-      <h3>Contacts</h3>
-      <div>
-        <address>
-          <p>Department name.</p>
-          <h4>{name}</h4>
-          <p>icon {address}</p>
-          <a href={`tel:${phone}`}>{phone}</a>
-          <a href={`mailto:${email}`}>{email}</a>
+    <section className={styles.contactsSection}>
+      <h2 className={styles.sectionHeading}>Contacts</h2>
+      <hr className={styles.sectionLine} />
+      <article className={styles.addresWrapper}>
+        <address className={styles.address}>
+          <h3 className={styles.descriptionName}>
+            Department name.
+            <br />
+            {name}
+          </h3>
+
+          <p className={styles.location}>
+            <svg className={styles.locationIcon}>
+              <use href={sprite + '#location'}></use>
+            </svg>
+            {address}
+          </p>
+          <a className={styles.phone} href={`tel:${phone}`}>
+            {convertedPhone}
+          </a>
+          <a className={styles.email} href={`mailto:${email}`}>
+            {email}
+          </a>
         </address>
-        {location.lat}
-        {location.long}
+      </article>
+      <div className={styles.mapWrapper}>
+        <LocationMap
+          styles={styles}
+          location={{ lat: location.lat, long: location.long }}
+        ></LocationMap>
       </div>
     </section>
   )

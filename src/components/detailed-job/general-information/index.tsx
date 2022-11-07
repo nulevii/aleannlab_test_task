@@ -5,10 +5,11 @@ import { DataInterface } from '../../../utilities/dataInterface'
 import { splitDescription } from '../../../utilities/splitDescription'
 import { generateKey } from '../../../utilities/keyGenerator'
 
+import { useTraceWindowWidth } from '../../../utilities/useTraceWindowWidth'
 import { convertSalary } from '../../../utilities/sallaryConverter'
+import { ApplyButton } from './apply-button'
 import styles from './style.module.css'
 import sprite from '../../../assets/icons.svg'
-import { ApplyButton } from './apply-button'
 
 dayjs.extend(relativeTime)
 
@@ -26,6 +27,8 @@ function GeneralInformation ({
     responsopilitiesText
   } = splitDescription(description)
 
+  const windowWidth = useTraceWindowWidth()
+
   const createdTime = dayjs(createdAt).fromNow()
   const dateTime = dayjs(createdAt).format('DD/MM/YYYY')
 
@@ -41,7 +44,10 @@ function GeneralInformation ({
           onClick={() => false}
         >
           <svg className={styles.starIcon}>
-            <use href={sprite + '#star'}></use>
+            <use
+              media="(max-width: 633px)"
+              href={sprite + (windowWidth >= 768 ? '#bookmark' : '#star')}
+            ></use>
           </svg>
           Save to my list
         </a>
@@ -65,16 +71,24 @@ function GeneralInformation ({
           <strong>{convertedSalary}</strong>
         </p>
       </div>
-      <p>{generalInfo}</p>
-      <h3>{responsopilities}</h3>
-      <p>{responsopilitiesText}</p>
-      <h3>{textBenefits}</h3>
-      <ul>
+      <p className={styles.textBlock}>{generalInfo}</p>
+      <h3 className={styles.textCaption}>{responsopilities}</h3>
+      <p className={styles.textBlock}>{responsopilitiesText}</p>
+      <h3 className={styles.textCaption}>{textBenefits}</h3>
+
+      <h4 className={styles.benefitsCaption}>
+        Our physicians enjoy a wide range of benefits, including:
+      </h4>
+      <ul className={styles.textBlock}>
         {textBenefitsArr.map((benefit) => (
-          <li key={generateKey()}>{benefit}</li>
+          <li className={styles.benifit} key={generateKey()}>
+            {benefit}
+          </li>
         ))}
       </ul>
-      <ApplyButton styles={styles.applyButton}></ApplyButton>
+      <ApplyButton
+        styles={`${styles.applyButtonMobile} ${styles.applyButton}`}
+      ></ApplyButton>
     </section>
   )
 }

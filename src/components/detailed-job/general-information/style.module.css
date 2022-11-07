@@ -3,11 +3,11 @@
 }
 
 .jobDetailsSection{
-  @apply mb-[135px]
+  @apply pb-[135px]
 }
 
 .sectionHeading{
-  @apply pb-3 order-first font-bold text-3xl leading-8 tracking-[-0.75px] w-full  md:w-auto
+  @apply pb-3 order-first md:w-auto
 }
 
 .sectionLine{
@@ -15,7 +15,7 @@
 }
 
 .helperLink{
-@apply inline-flex mb-8  items-center tracking-[-0.5px] text-customBlue-transperent-80 md:order-first 
+@apply inline-flex mb-8  items-center h-6 not-italic font-normal text-base leading-6 tracking-[-0.5px] text-customBlue-transperent-80 md:order-first md:mb-0
 }
 
 .saveLink{
@@ -23,7 +23,7 @@
 }
 
 .starIcon{
-  @apply w-[20px] h-[20px] mr-3 fill-transparent stroke-customBlue-800 stroke-[3px]
+  @apply w-[20px] h-[20px] mr-3 fill-transparent stroke-customBlue-800 stroke-[3px] 
 }
 
 .shareIcon{
@@ -31,7 +31,7 @@
 }
 
 .applyButton{
-  @apply rounded-lg w-[127px] h-[52px] not-italic bg-customBlue-800 text-white
+  @apply rounded-lg w-[127px] h-[52px] not-italic font-semibold text-xs leading-4 text-center  bg-customBlue-800 text-white 
 }
 
 .description{
@@ -51,5 +51,21 @@
 }
 
 .textBlock {
-  @apply not-italic font-normal text-lg leading-6
+  @apply mb-6 not-italic font-normal text-lg leading-6 tracking-[-0.56px] text-customBlue-transperent-80 
+}
+
+.textCaption {
+  @apply mb-4 font-bold text-xl leading-6 
+}
+
+.benefitsCaption {
+  @apply font-normal text-lg leading-6 tracking-[-0.56px] text-customBlue-transperent-80 
+}
+
+.benifit::before{
+  @apply align-middle mb-1 mr-4 content-[''] inline-block w-[9px] h-[9px] leading-6 bg-customBlue-transperent-60
+}
+
+.applyButtonMobile{
+  @apply mx-auto block md:mx-0
 }

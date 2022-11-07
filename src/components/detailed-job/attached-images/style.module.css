@@ -1,0 +1,23 @@
+/* .blockWrapper{
+ @apply flex flex-wrap
+} */
+
+.imagesSection{
+  @apply pb-[55px] max-w-[100vw] 
+}
+
+.sectionHeading{
+  @apply pb-[10px] md:w-auto
+}
+
+.sectionLine{
+  @apply w-full mb-6 h-px border-none bg-customBlue-800 
+}
+
+.companyImagesList{
+  @apply flex pb-2 gap-[10px] overflow-x-auto scrollbar-thin scrollbar-track-customGray-100 scrollbar-track-white
+}
+
+.companyImage{
+  @apply min-w-[209px] w-[209px] h-[115px] shrink-0 rounded-lg object-cover 
+}

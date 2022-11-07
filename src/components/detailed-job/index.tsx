@@ -31,31 +31,33 @@ function DetailedJob ({ jobs }: { jobs: DataInterface[] }) {
   } = jobObj
 
   return (
-    <main className={styles.jobDetailsMain}>
-      <GeneralInformation
-        title={title}
-        createdAt={createdAt}
-        description={description}
-        salary={salary}
-      ></GeneralInformation>
+    <>
+      <main className={styles.jobDetailsMain}>
+        <GeneralInformation
+          title={title}
+          createdAt={createdAt}
+          description={description}
+          salary={salary}
+        ></GeneralInformation>
 
-      <AditionalInfo
-        employmentType={employmentType}
-        benefits={benefits}
-      ></AditionalInfo>
+        <AttachedImages images={images} name={name}></AttachedImages>
 
-      <AttachedImages images={images} name={name}></AttachedImages>
-
-      <button>icon RETURN TO JOB BOARD</button>
-
-      <Contacts
-        address={address}
-        phone={phone}
-        email={email}
-        location={location}
-        name={name}
-      ></Contacts>
-    </main>
+        <AditionalInfo
+          employmentType={employmentType}
+          benefits={benefits}
+        ></AditionalInfo>
+        <Contacts
+          address={address}
+          phone={phone}
+          email={email}
+          location={location}
+          name={name}
+        ></Contacts>
+      </main>
+      <footer className="mobileHidden">
+        <button>icon RETURN TO JOB BOARD</button>
+      </footer>
+    </>
   )
 }
 

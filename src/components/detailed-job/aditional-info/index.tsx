@@ -1,5 +1,5 @@
 import { DataInterface } from '../../../utilities/dataInterface'
-
+import styles from './style.module.css'
 function AditionalInfo ({
   benefits,
   employmentType
@@ -8,18 +8,19 @@ function AditionalInfo ({
   benefits: DataInterface['benefits']
 }) {
   return (
-    <section>
-      <h2>Additional info</h2>
-      <p>Employment type</p>
-      <ul>
+    <section className={styles.benifitsSection}>
+      <h2 className={styles.sectionHeading}>Additional info</h2>
+      <hr className={styles.sectionLine} />
+      <h3 className={styles.AditionalInfoListCaption}>Employment type</h3>
+      <ul className={styles.AditionalInfoList}>
         {employmentType.map((type) => (
-          <li key={type}>{type}</li>
+          <li className={styles.employmentType} key={type}>{type}</li>
         ))}
       </ul>
-      <p>Benefits</p>
-      <ul>
+      <h3 className={styles.AditionalInfoListCaption}>Benefits</h3>
+      <ul className={styles.AditionalInfoList}>
         {benefits.map((benifit) => (
-          <li key={benifit}>{benifit}</li>
+          <li className={styles.benifit} key={benifit}>{benifit}</li>
         ))}
       </ul>
     </section>

@@ -1,0 +1,39 @@
+/* .blockWrapper{
+ @apply flex flex-wrap
+} */
+
+.benifitsSection{
+  @apply pb-[63px] max-w-[100vw] 
+}
+
+.sectionHeading{
+  @apply pb-[10px] md:w-auto
+}
+
+.sectionLine{
+  @apply w-full mb-[15px] h-px border-none bg-customBlue-800 
+}
+
+.companyImagesList{
+  @apply flex pb-2 gap-[10px] overflow-x-auto scrollbar-thin scrollbar-track-customGray-100 scrollbar-track-white
+}
+
+.companyImage{
+  @apply min-w-[209px] w-[209px] h-[115px] shrink-0 rounded-lg object-cover 
+}
+
+.AditionalInfoListCaption{
+  @apply mb-[10px] font-normal text-lg leading-6 tracking-[-0.56px] text-customBlue-transperent-80
+}
+
+.AditionalInfoList{
+  @apply flex flex-wrap gap-2
+}
+
+.employmentType{
+  @apply mb-[22px] pl-11 pr-5 py-[17px] border border-customGray-600 rounded-lg font-bold text-base leading-4 tracking-[-0.45px] bg-customBlue-transperent-30 text-customBlue-600
+}
+
+.benifit{
+  @apply px-[13px] py-[17px] border border-customYellow-800 rounded-lg font-bold text-base leading-4 tracking-[-0.45px] bg-customYellow-400 text-customYellow-500
+}

@@ -1,6 +1,8 @@
 import { DataInterface } from '../../../utilities/dataInterface'
 import { generateKey } from '../../../utilities/keyGenerator'
 
+import styles from './style.module.css'
+
 function AttachedImages ({
   images,
   name
@@ -9,11 +11,12 @@ function AttachedImages ({
   name: DataInterface['name']
 }) {
   return (
-    <section>
-      <h3>Attached images</h3>
-      <ul>
+    <section className={styles.imagesSection}>
+      <h3 className={styles.sectionHeading}>Attached images</h3>
+      <hr className={styles.sectionLine} />
+      <ul className={styles.companyImagesList}>
         {images.map((image) => (
-          <img key={generateKey()} src={image} alt="company"></img>
+          <img className={styles.companyImage} key={generateKey()} src={image} alt="company"></img>
         ))}
       </ul>
     </section>
