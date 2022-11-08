@@ -15,7 +15,7 @@
 }
 
 .companyImagesList{
-  @apply flex pb-2 gap-[10px] overflow-x-auto scrollbar-thin scrollbar-track-customGray-100 scrollbar-track-white
+  @apply flex pb-2 gap-[10px] overflow-x-auto scrollbar-thin scrollbar-track-white
 }
 
 .companyImage{
