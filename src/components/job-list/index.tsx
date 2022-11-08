@@ -1,4 +1,4 @@
-import { useParams } from 'react-router-dom'
+import { useParams, Navigate } from 'react-router-dom'
 
 import { DataInterface } from '../../utilities/dataInterface'
 
@@ -8,15 +8,21 @@ import TabSelector from './tabSelector'
 const PAGE_SIZE = 8
 
 function JobList ({ jobs }: { jobs: DataInterface[] }) {
-  console.log(jobs)
   const { id: pageId } = useParams()
-  const NumberTypeId = Number(pageId)
+  const NumberTypePageId = Number(pageId)
   const pagesQtt = Math.ceil(jobs.length / PAGE_SIZE)
+
+  if (
+    !Number.isInteger(NumberTypePageId) ||
+    NumberTypePageId <= 0 ||
+    NumberTypePageId > pagesQtt
+  ) {
+    return <Navigate to="/job_list/1" />
+  }
   const jobsListPart = jobs.slice(
-    NumberTypeId * PAGE_SIZE - PAGE_SIZE,
-    NumberTypeId * PAGE_SIZE
+    NumberTypePageId * PAGE_SIZE - PAGE_SIZE,
+    NumberTypePageId * PAGE_SIZE
   )
-  console.log(jobsListPart)
   return (
     <>
       <section className="bg-customBlue-200  p-2 font-roboto flex flex-col min-h-screen">
@@ -25,7 +31,10 @@ function JobList ({ jobs }: { jobs: DataInterface[] }) {
             return <JobElement key={job.id} job={job}></JobElement>
           })}
         </ul>
-        <TabSelector pageQtt={pagesQtt}></TabSelector>
+        <TabSelector
+          pageQtt={pagesQtt}
+          NumberTypePageId={NumberTypePageId}
+        ></TabSelector>
       </section>
     </>
   )

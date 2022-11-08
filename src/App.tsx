@@ -20,6 +20,7 @@ function App () {
       <ScrollToTop />
       <Routes>
         <Route path="/job_list">
+          <Route path="" element={<Navigate to="/job_list/1" />}></Route>
           <Route path=":id" element={<JobList jobs={jobs} />}></Route>
         </Route>
         <Route path="/job/:id" element={<DetailedJob jobs={jobs} />}></Route>
