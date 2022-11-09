@@ -25,7 +25,7 @@ function JobList ({ jobs }: { jobs: DataInterface[] }) {
   )
   return (
     <>
-      <section className="bg-customBlue-200  p-2 font-roboto flex flex-col min-h-screen">
+      <section className="bg-customBlue-200  p-2 font-roboto flex flex-col min-h-screen md:pt-7">
         <ul className="space-y-2">
           {jobsListPart.map((job) => {
             return <JobElement key={job.id} job={job}></JobElement>
