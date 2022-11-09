@@ -12,9 +12,7 @@ function TextInfo ({
   return (
     <div>
       <h3 className={styles.description}>
-        <Link to={`/job/${id}`}>
-          {title}
-        </Link>
+        <Link to={`/aleannlab_test_task/job/${id}`}>{title}</Link>
       </h3>
       <p className={styles.departmentNameAndLocation}>
         Department name • {name}

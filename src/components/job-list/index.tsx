@@ -8,20 +8,20 @@ import TabSelector from './tabSelector'
 const PAGE_SIZE = 8
 
 function JobList ({ jobs }: { jobs: DataInterface[] }) {
-  const { id: pageId } = useParams()
-  const NumberTypePageId = Number(pageId)
+  const { pageNumber } = useParams()
+  const pageNumberNType = Number(pageNumber)
   const pagesQtt = Math.ceil(jobs.length / PAGE_SIZE)
 
   if (
-    !Number.isInteger(NumberTypePageId) ||
-    NumberTypePageId <= 0 ||
-    NumberTypePageId > pagesQtt
+    !Number.isInteger(pageNumberNType) ||
+    pageNumberNType <= 0 ||
+    pageNumberNType > pagesQtt
   ) {
-    return <Navigate to="/job_list/1" />
+    return <Navigate to="/aleannlab_test_task/job_list/1" />
   }
   const jobsListPart = jobs.slice(
-    NumberTypePageId * PAGE_SIZE - PAGE_SIZE,
-    NumberTypePageId * PAGE_SIZE
+    pageNumberNType * PAGE_SIZE - PAGE_SIZE,
+    pageNumberNType * PAGE_SIZE
   )
   return (
     <>
@@ -33,7 +33,7 @@ function JobList ({ jobs }: { jobs: DataInterface[] }) {
         </ul>
         <TabSelector
           pageQtt={pagesQtt}
-          NumberTypePageId={NumberTypePageId}
+          pageNumberNType={pageNumberNType}
         ></TabSelector>
       </section>
     </>

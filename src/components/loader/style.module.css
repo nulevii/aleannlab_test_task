@@ -1,0 +1,26 @@
+
+
+.loading{
+  @apply flex w-screen h-screen items-center justify-center
+
+}
+
+.loading-sign{
+  @apply text-5xl text-customBlue-600
+
+}
+
+.spinner {
+  @apply ml-4 w-16 h-16 rounded-full;
+
+   background: radial-gradient(farthest-side,#55699e 94%,#0000) top/14.1px 14.1px no-repeat,
+          conic-gradient(#0000 30%,#55699e);
+   -webkit-mask: radial-gradient(farthest-side,#0000 calc(100% - 14.1px),#000 0);
+   animation: spinner 1s infinite linear;
+}
+
+@keyframes spinner {
+   100% {
+      transform: rotate(1turn);
+   }
+}

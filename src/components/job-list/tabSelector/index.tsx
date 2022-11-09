@@ -7,30 +7,33 @@ import styles from './style.module.css'
 
 function TabSelector ({
   pageQtt,
-  NumberTypePageId
+  pageNumberNType
 }: {
   pageQtt: number
-  NumberTypePageId: number
+  pageNumberNType: number
 }) {
   const navigate = useNavigate()
   const pageQttArray = generateArray(pageQtt, false)
 
   const navigateLeft = () => {
-    if (NumberTypePageId <= 1) {
+    if (pageNumberNType <= 1) {
       return
     }
-    navigate(`/job_list/${NumberTypePageId - 1}`)
+    navigate(`/aleannlab_test_task/job_list/${pageNumberNType - 1}`)
   }
   const navigateRight = () => {
-    if (NumberTypePageId >= pageQtt) {
+    if (pageNumberNType >= pageQtt) {
       return
     }
-    navigate(`/job_list/${NumberTypePageId + 1}`)
+    navigate(`/aleannlab_test_task/job_list/${pageNumberNType + 1}`)
   }
 
   return (
     <figure className={styles.tabSelectorWrapper}>
-      <button className={styles.leftButton} onClick={navigateLeft}>
+      <button
+        className={`${styles.leftButton} mobileHidden`}
+        onClick={navigateLeft}
+      >
         <svg className={styles.arrowLeft}>
           <use href={sprite + '#arrow-left'}></use>
         </svg>
@@ -39,19 +42,22 @@ function TabSelector ({
         {pageQttArray.map((index) => (
           <button
             key={generateKey()}
-            className={`${styles.numberButton} ${index === NumberTypePageId ? `${styles.active}` : ''}`}
+            className={`${styles.numberButton} ${
+              index === pageNumberNType ? `${styles.active}` : ''
+            }`}
             onClick={() => {
-              navigate(`/job_list/${index}`)
-            }
-            }
+              navigate(`/aleannlab_test_task/job_list/${index}`)
+            }}
           >
             {' '}
             {index}{' '}
           </button>
-        )
-        )}
+        ))}
       </div>
-      <button className={styles.rightButton} onClick={navigateRight}>
+      <button
+        className={`${styles.rightButton} mobileHidden`}
+        onClick={navigateRight}
+      >
         <svg className={styles.arrowRight}>
           <use href={sprite + '#arrow-right'}></use>
         </svg>

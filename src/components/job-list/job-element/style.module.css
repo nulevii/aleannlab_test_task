@@ -27,7 +27,11 @@
 }
 
 .bookmark {
-  @apply hidden shrink-0 w-4 h-5 mr-2 md:block
+  @apply hidden shrink-0 w-4 h-5 mr-2 md:block fill-white
+}
+
+.favoriteBookmark{
+  @apply fill-customBlue-600
 }
 
 .createdDate {

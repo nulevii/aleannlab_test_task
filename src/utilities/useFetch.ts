@@ -2,7 +2,6 @@ import { useState, useEffect, useCallback } from 'react'
 
 import { DataInterface } from './dataInterface'
 import { localCopy } from './localCopy'
-import { generateArray } from './arrayGenerator'
 
 export const useFetch = (url: string): { loading: boolean, data: DataInterface[] } => {
   const [loading, setLoading] = useState(true)
@@ -13,14 +12,11 @@ export const useFetch = (url: string): { loading: boolean, data: DataInterface[]
       const response = await fetch(url)
       const data = (await response.json())
       if (!Array.isArray(data)) throw Error(data?.error || 'unknown error')
-      const dataWithRating = data.map((element) => ({ ...element, rating: generateArray(5, true) }))
-      setProducts(dataWithRating)
+      setProducts(data)
       setLoading(false)
     } catch (error) {
       setLoading(false)
-      setProducts(
-        localCopy.map((element) => ({ ...element, rating: generateArray(5, true) }))
-      )
+      setProducts(localCopy)
     }
   }, [url])
 

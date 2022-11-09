@@ -26,6 +26,10 @@
   @apply w-[20px] h-[20px] mr-3 fill-transparent stroke-customBlue-800 stroke-[3px] md:w-4 
 }
 
+.favoriteBookmark{
+  @apply fill-customBlue-600
+}
+
 .shareIcon{
   @apply w-[18px] h-[20px] mr-3 fill-customBlue-800
 }
@@ -83,4 +87,34 @@
 
 .applyButtonMobile{
   @apply mx-auto block md:mx-0
+}
+
+.socialMedia{
+  @apply fixed left-0 top-0 z-10  w-screen h-screen  bg-customBlue-transperent-30
+}
+
+.socialMediaWrapper{
+  @apply absolute  max-w-[200px] h-40 left-[50%] top-[50%] translate-y-[-50%] translate-x-[-50%]  px-3 pb-10 pt-4 shadow-md rounded-3xl bg-white
+  md:max-w-none md:h-32
+}
+
+.buttonsWrapper{
+ @apply flex flex-wrap gap-3 items-center justify-center 
+}
+
+.linkWrapper{
+@apply w-8 h-8 rounded-full flex items-center justify-center bg-gray-500
+}
+
+
+.linkIcon{
+  @apply fill-white w-5 h-5
+}
+
+.closeIcon{
+  @apply h-3 w-3 fill-customBlue-600 absolute top-4 right-4
+}
+
+.copyNotation{
+  @apply text-xl   text-center 
 }

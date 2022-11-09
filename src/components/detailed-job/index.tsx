@@ -8,16 +8,21 @@ import Contacts from './contacts'
 import styles from './style.module.css'
 import sprite from '../../assets/icons.svg'
 
-function DetailedJob ({ jobs }: { jobs: DataInterface[] }) {
+function DetailedJob ({
+  jobs
+}: {
+  jobs: DataInterface[]
+}) {
   const navigate = useNavigate()
   const { id: pageId } = useParams()
 
   const jobObj = jobs.find(({ id }) => id === pageId)
   if (!jobObj) {
-    return <Navigate to="/job_list/1" />
+    return <Navigate to="/aleannlab_test_task/job_list/1" />
   }
 
   const {
+    id,
     title,
     pictures: images,
     createdAt,
@@ -37,6 +42,7 @@ function DetailedJob ({ jobs }: { jobs: DataInterface[] }) {
       <main className={styles.jobDetailsMain}>
         <div className={styles.sectionsWrapper}>
           <GeneralInformation
+            id={id}
             title={title}
             createdAt={createdAt}
             description={description}
@@ -59,15 +65,9 @@ function DetailedJob ({ jobs }: { jobs: DataInterface[] }) {
         ></Contacts>
       </main>
       <footer className={`mobileHidden ${styles.jobDetailsFooter}`}>
-        <button
-          onClick={() => navigate('/job_list')}
-          className={styles.returnButton}
-        >
+        <button onClick={() => navigate(-1)} className={styles.returnButton}>
           <svg className={styles.arrowIcon}>
-            <use
-              media="(max-width: 633px)"
-              href={sprite + '#arrow-left-detailed-job'}
-            ></use>
+            <use href={sprite + '#arrow-left-detailed-job'}></use>
           </svg>
           RETURN TO JOB BOARD
         </button>
